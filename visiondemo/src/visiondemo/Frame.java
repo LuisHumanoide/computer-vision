@@ -92,6 +92,7 @@ public class Frame extends javax.swing.JFrame {
      */
     void exitProcedure() {
         cam.active = false;
+        cam.videoDevice.release();
         System.exit(0);
     }
 
