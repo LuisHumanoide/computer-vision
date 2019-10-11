@@ -10,7 +10,7 @@ import Codes.ObjectDetectCascades;
 import Codes.FaceDetect;
 import Codes.LightGraffiti;
 import Utils.Convertor;
-import Utils.Values;
+import Utils.Properties;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import org.opencv.core.Mat;
@@ -30,11 +30,11 @@ public class ImageManager {
      * @param image
      * @param frame 
      */
-    public static void setImage(Mat image, Frame frame) {
+    public static void setImage(Mat image, WindowFrame frame) {
         // TODO Auto-generated method stub
         try {
             Mat graffiti=LightGraffiti.graffiti(image);
-            Imgproc.resize(graffiti, graffiti, new Size(Values.pwidth, Values.height));
+            Imgproc.resize(graffiti, graffiti, new Size(Properties.width, Properties.height));
             frame.addImg(Convertor.ConvertMat2Image(graffiti));
         } catch (Exception e) {
             e.printStackTrace();

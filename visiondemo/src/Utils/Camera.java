@@ -8,7 +8,7 @@ package Utils;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
-import visiondemo.Frame;
+import visiondemo.WindowFrame;
 import visiondemo.ImageManager;
 
 /**
@@ -21,15 +21,15 @@ public class Camera implements Runnable {
     //ande ca
     public VideoCapture videoDevice = new VideoCapture();
     Mat src = new Mat();
-    Frame frame;
+    WindowFrame frame;
     public boolean active=true;
     /**
      * recibe la clase frame a la cual se le pasará la imagen
      * @param frame 
      */
-    public Camera(Frame frame) {
+    public Camera(WindowFrame frame) {
         /* si no funciona se cambia a otro número*/
-        videoDevice.open(1);
+        videoDevice.open(Properties.camera);
         this.frame=frame;
     }
     /**
@@ -44,7 +44,7 @@ public class Camera implements Runnable {
                 videoDevice.read(src);
                 Core.flip(src, src, 1);
                 MatHandler(src);
-                Thread.sleep(30);
+                Thread.sleep(Properties.refreshTime);
             } catch (Exception ex) {
             }
         }
