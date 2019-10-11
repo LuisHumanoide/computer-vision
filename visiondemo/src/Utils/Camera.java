@@ -5,6 +5,7 @@
  */
 package Utils;
 
+import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
 import visiondemo.Frame;
@@ -28,7 +29,7 @@ public class Camera implements Runnable {
      */
     public Camera(Frame frame) {
         /* si no funciona se cambia a otro número*/
-        videoDevice.open(0);
+        videoDevice.open(1);
         this.frame=frame;
     }
     /**
@@ -41,8 +42,9 @@ public class Camera implements Runnable {
         while (active) {
             try {
                 videoDevice.read(src);
+                Core.flip(src, src, 1);
                 MatHandler(src);
-                Thread.sleep(50);
+                Thread.sleep(30);
             } catch (Exception ex) {
             }
         }

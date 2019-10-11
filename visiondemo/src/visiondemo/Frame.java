@@ -6,28 +6,16 @@
 package visiondemo;
 
 import Utils.Camera;
-import Utils.Convertor;
-import java.awt.Color;
+import Utils.Values;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.border.TitledBorder;
 import org.opencv.core.Core;
-import static org.opencv.core.Core.FILLED;
-import static org.opencv.core.CvType.CV_8UC3;
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfPoint;
-import org.opencv.core.MatOfPoint2f;
-import org.opencv.core.Point;
-import org.opencv.core.RotatedRect;
-import org.opencv.core.Scalar;
-import org.opencv.imgproc.Imgproc;
-import static org.opencv.imgproc.Imgproc.drawContours;
 
 /**
  * Esta clase es para mostrar las imagenes del opencv
@@ -38,6 +26,8 @@ public class Frame extends javax.swing.JFrame {
 
     private Thread thread;
     Camera cam;
+    int width;
+    int height; 
     /**
      * Creates new form Fram
      */
@@ -47,6 +37,9 @@ public class Frame extends javax.swing.JFrame {
         cam = new Camera(this);
         thread = new Thread(cam);
         thread.start();
+       
+        this.setSize(Values.width, Values.height);
+        label.setSize(Values.pwidth, Values.height);  
 
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.addWindowListener(new WindowAdapter() {
@@ -74,13 +67,15 @@ public class Frame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         pack();
@@ -140,6 +135,7 @@ public class Frame extends javax.swing.JFrame {
      * @param img
      */
     public void addImg(BufferedImage img) {
+        label.setSize(Values.pwidth, Values.height);
         label.setIcon(new ImageIcon(img));
         label.repaint();
     }

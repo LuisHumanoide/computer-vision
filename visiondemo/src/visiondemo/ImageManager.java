@@ -8,8 +8,14 @@ package visiondemo;
 import Codes.Blur;
 import Codes.ObjectDetectCascades;
 import Codes.FaceDetect;
+import Codes.LightGraffiti;
 import Utils.Convertor;
+import Utils.Values;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
 
 /**
  * Esta clase es para poner el método donde se podrán llamar las otras clases
@@ -27,8 +33,9 @@ public class ImageManager {
     public static void setImage(Mat image, Frame frame) {
         // TODO Auto-generated method stub
         try {
-            Mat dect=ObjectDetectCascades.cascadeDetect(image, ObjectDetectCascades.pedestrian, "peaton");
-            frame.addImg(Convertor.ConvertMat2Image(dect));
+            Mat graffiti=LightGraffiti.graffiti(image);
+            Imgproc.resize(graffiti, graffiti, new Size(Values.pwidth, Values.height));
+            frame.addImg(Convertor.ConvertMat2Image(graffiti));
         } catch (Exception e) {
             e.printStackTrace();
         }
