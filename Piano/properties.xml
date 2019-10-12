@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+	<width>1408</width>
+	<height>1056</height>
+	<locationx>0</locationx>
+	<locationy>-20</locationy>
+	<blur>11</blur>
+	<thresh>245</thresh>
+	<autoErase>0</autoErase>
+	<tErase>1000</tErase>
+	<refreshTime>30</refreshTime>
+	<camera>1</camera>
+	<decay>0.995</decay>
+</properties>

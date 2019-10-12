@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/Codes/Blur.java</file>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/Codes/LightGraffiti.java</file>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/visiondemo/ImageManager.java</file>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/visiondemo/Frame.java</file>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/Utils/Convertor.java</file>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/Utils/Values.java</file>
-            <file>file:/C:/Users/carlos/Documents/computer-vision/visiondemo/src/Utils/Camera.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/Utils/Reader.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/Utils/Convertor.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/Codes/LightGraffiti.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/visiondemo/visiondemo.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/visiondemo/WindowFrame.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/Utils/Camera.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/visiondemo/ImageManager.java</file>
+            <file>file:/F:/HumanoideFilms/Documents/vision/visiondemo/src/Utils/Properties.java</file>
         </group>
     </open-files>
 </project-private>
