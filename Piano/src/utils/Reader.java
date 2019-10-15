@@ -39,11 +39,8 @@ public class Reader {
                 int locationy = Integer.parseInt(propertyElement.getElementsByTagName("locationy").item(0).getTextContent());
                 int blur = Integer.parseInt(propertyElement.getElementsByTagName("blur").item(0).getTextContent());
                 int thresh = Integer.parseInt(propertyElement.getElementsByTagName("thresh").item(0).getTextContent());
-                int autoErase = Integer.parseInt(propertyElement.getElementsByTagName("autoErase").item(0).getTextContent());
-                int tErase = Integer.parseInt(propertyElement.getElementsByTagName("tErase").item(0).getTextContent());
                 int refreshTime = Integer.parseInt(propertyElement.getElementsByTagName("refreshTime").item(0).getTextContent());
                 int camera=Integer.parseInt(propertyElement.getElementsByTagName("camera").item(0).getTextContent());
-                double decay=Double.parseDouble(propertyElement.getElementsByTagName("decay").item(0).getTextContent());
                 
                 Properties.setWidth(width);
                 Properties.setHeight(height);
@@ -51,11 +48,8 @@ public class Reader {
                 Properties.setLocationY(locationy);
                 Properties.setBlur(blur);
                 Properties.setThresh(thresh);
-                Properties.setAutoErase(autoErase);
-                Properties.settErase(tErase);
                 Properties.setRefreshTime(refreshTime);
-                Properties.setRefreshTime(camera);
-                Properties.setDecay(decay);
+                Properties.setCamera(camera);
                 
             }
         } catch (Exception ex) {

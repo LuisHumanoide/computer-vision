@@ -9,8 +9,6 @@ package piano;
 import codes.PianoVision;
 import utils.Convertor;
 import utils.Properties;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
@@ -31,9 +29,9 @@ public class ImageManager {
     public static void setImage(Mat image, WindowFrame frame) {
         // TODO Auto-generated method stub
         try {
-            Mat graffiti=PianoVision.lightDect(image);
-            Imgproc.resize(graffiti, graffiti, new Size(Properties.width, Properties.height));
-            frame.addImg(Convertor.ConvertMat2Image(graffiti));
+            Mat piano=PianoVision.lightDect(image);
+            Imgproc.resize(piano, piano, new Size(Properties.width, Properties.height));
+            frame.addImg(Convertor.ConvertMat2Image(piano));
         } catch (Exception e) {
             e.printStackTrace();
         }

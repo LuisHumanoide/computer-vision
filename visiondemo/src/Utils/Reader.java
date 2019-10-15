@@ -54,7 +54,7 @@ public class Reader {
                 Properties.setAutoErase(autoErase);
                 Properties.settErase(tErase);
                 Properties.setRefreshTime(refreshTime);
-                Properties.setRefreshTime(camera);
+                Properties.setCamera(camera);
                 Properties.setDecay(decay);
                 
             }
